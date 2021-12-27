@@ -1,0 +1,20 @@
+{
+  "name": "vanilla-node-rest-api-docker",
+  "version": "1.0.0",
+  "description": "Vanilla NODE.js REST API In Docker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node start.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Daniel C. Landon Jr.",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}

@@ -1,0 +1,3 @@
+// extension vscode REST Client. Used to send api requests for testing without having to type everything in.
+
+GET http://localhost:5000
