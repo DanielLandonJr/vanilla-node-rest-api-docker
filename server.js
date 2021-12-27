@@ -1,8 +1,8 @@
 // dependencies
 const http = require('http');
 
-// data
-const products = require('./data/products.json');
+// deconstruct to only require what we need
+const { getProducts} = require('./controllers/productControllers')
 
 // server object...what does the server do when it receives a request
 const server = http.createServer((request, response) => {
@@ -16,14 +16,13 @@ const server = http.createServer((request, response) => {
 
         case 'GET':
             switch (request.url) {
-                default:
+                default: // GET request but invalid URL
                     response.writeHead(404, {'Content-Type': 'application/json'});
-                    response.end(JSON.stringify({ 'message': 'Pack Sand!' }));
+                    response.end(JSON.stringify({ 'message': 'Information Not Found' }));
                     break;
 
-                case '/products/api':
-                    response.writeHead(200, {'Content-Type': 'application/json'});
-                    response.end(JSON.stringify(products));
+                case '/products/api': // show the basic list of products
+                    getProducts(request, response);
                     break;
             }
             break;
